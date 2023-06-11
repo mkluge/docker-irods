@@ -1,5 +1,5 @@
 # debian based PostgreSQL container from docker hub
-FROM postgres:9.6.3
+FROM postgres:13-bullseye
 RUN if [ ! -d /docker-entrypoint-initdb.d ]; then mkdir /docker-entrypoint-initdb.d; fi
 
 # environment variables used for initialising iCAT database
