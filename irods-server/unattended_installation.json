@@ -1,0 +1,15 @@
+{
+    "admin_password": "test123",
+    "default_resource_directory": "/data",
+    "default_resource_name": {"type": "string"},
+    "host_system_information": {
+            "service_account_user_name": "irods",
+            "service_account_group_name": "irods"
+    },
+    "server_config": {
+        "$ref": "catalog_service_provider.json"
+    },
+    "service_account_environment": {
+        "$ref": "catalog_service_consumer.json"
+    }
+}
