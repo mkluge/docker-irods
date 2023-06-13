@@ -2,9 +2,12 @@ FROM python:3.9-bullseye
 
 LABEL MAINTAINER = Michael Kluge <michael.kluge@tu-dresden.de>
 
+#COPY resolv.conf /etc/resolv.conf
+RUN cat /etc/resolv.conf
 RUN apt update
 RUN apt upgrade -y
-RUN apt install -y sudo lsb-release python3-pip systemctl
+RUN apt install -y sudo lsb-release python3-pip systemctl bind9-host
+RUN host icat-db
 RUN pip3 install --upgrade pip
 RUN wget -qO - https://packages.irods.org/irods-signing-key.asc | sudo apt-key add -
 RUN echo "deb [arch=amd64] https://packages.irods.org/apt/ $(lsb_release -sc) main" | sudo tee \
