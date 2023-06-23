@@ -2,8 +2,6 @@ FROM python:3.9-bullseye
 
 LABEL MAINTAINER = Michael Kluge <michael.kluge@tu-dresden.de>
 
-#COPY resolv.conf /etc/resolv.conf
-RUN cat /etc/resolv.conf
 RUN apt update
 RUN apt upgrade -y
 RUN apt install -y sudo lsb-release python3-pip systemctl bind9-host
