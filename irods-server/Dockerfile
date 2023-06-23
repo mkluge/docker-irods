@@ -14,7 +14,7 @@ RUN echo "deb [arch=amd64] https://packages.irods.org/apt/ $(lsb_release -sc) ma
 RUN apt update
 RUN apt upgrade -y
 RUN apt install -y irods-server irods-database-plugin-postgres
-RUN pip3 install distro psutil pyodbc
+RUN pip3 install distro psutil pyodbc jsonschema
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 COPY catalog_service_provider.json /tmp/catalog_service_provider.json
 
