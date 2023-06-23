@@ -21,6 +21,10 @@ COPY catalog_service_provider.json /tmp/catalog_service_provider.json
 VOLUME "/etc/irods" "/var/lib/irods/iRODS/server/log" "/var/lib/irods/Vault"
 
 ## network ports
+ENV IRODS_ZONE_PORT=1247
+ENV IRODS_CONTROLPLANE_PORT=1248
+ENV IRODS_DATA_PORT_RANGE_BEG=20000
+ENV IRODS_DATA_PORT_RANGE_END=20199
 EXPOSE 4321 $IRODS_ZONE_PORT $IRODS_CONTROLPLANE_PORT $IRODS_DATA_PORT_RANGE_BEG-$IRODS_DATA_PORT_RANGE_END
 
 ## entrypoint
