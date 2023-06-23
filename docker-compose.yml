@@ -6,7 +6,7 @@ networks:
 services:
   icat-db:
     build: ./postgres
-    hostname: icat-db.irods
+    hostname: icat-db
     container_name: icat-db
 #     restart: unless-stopped
     expose:
@@ -17,7 +17,7 @@ services:
   irods-server:
     build: ./irods-server
     container_name: irods-server
-    hostname: irods-server.irods
+    hostname: irods-server
 #    restart: unless-stopped
     volumes:
       - /dev/urandom:/dev/random
@@ -45,7 +45,7 @@ services:
 
   irods-webdav:
     build: ./davrods
-    hostname: irods-webdav.irods
+    hostname: irods-webdav
 #    restart: unless-stopped
     volumes:
       - /dev/urandom:/dev/random
