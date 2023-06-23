@@ -25,9 +25,13 @@ services:
     ports:
       - 1247:1247
       - 20000-20199:20000-20199
-    dns:
-      - 10.0.0.1
-      - 10.0.0.11
+    environment:
+      - IRODS_ICAT_DBSERVER=icat-db
+      - IRODS_ZONE_PORT=1247
+      - IRODS_ZONE_NAME=demo
+      - IRODS_WEBDAV_HOST=irods-webdav
+      - IRODS_RESOURCE_OL=irods-resc-ol
+      - IRODS_RESOURCE_NL=irods-resc-nl=value
     depends_on:
       - icat-db
     links:
