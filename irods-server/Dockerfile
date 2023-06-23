@@ -5,7 +5,8 @@ LABEL MAINTAINER = Michael Kluge <michael.kluge@tu-dresden.de>
 RUN apt update
 RUN apt upgrade -y
 RUN apt install -y sudo lsb-release python3-pip systemctl bind9-host
-RUN host icat-db
+# i think this is wrong ... DNS will not work yet
+#RUN host icat-db
 RUN pip3 install --upgrade pip
 RUN wget -qO - https://packages.irods.org/irods-signing-key.asc | sudo apt-key add -
 RUN echo "deb [arch=amd64] https://packages.irods.org/apt/ $(lsb_release -sc) main" | sudo tee \
