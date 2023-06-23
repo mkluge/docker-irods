@@ -15,7 +15,6 @@ RUN apt upgrade -y
 RUN apt install -y irods-server irods-database-plugin-postgres
 RUN pip3 install distro psutil pyodbc
 COPY catalog_service_provider.json /tmp/catalog_service_provider.json
-RUN python3 /var/lib/irods/scripts/setup_irods.py --json_configuration_file /tmp/catalog_service_provider.json
 
 ## data volumes
 VOLUME "/etc/irods" "/var/lib/irods/iRODS/server/log" "/var/lib/irods/Vault"

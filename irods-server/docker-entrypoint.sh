@@ -23,18 +23,14 @@ if [ "$1" == "irods" ]; then
 
     else
 
-        echo "provisioning iRODS ..."
-        /genresp.sh /response.txt
-
-        cat /response.txt | python /var/lib/irods/scripts/setup_irods.py
-
-        cp /var/lib/irods/.irods/irods_environment.json /etc/irods/irods_environment.json
-        cp /var/lib/irods/.odbc.ini /etc/irods/.odbc.ini
+        echo "running iRODS unattended installer"
+        python3 /var/lib/irods/scripts/setup_irods.py --json_configuration_file /tmp/catalog_service_provider.json
 
         ## enable the python rule engine
-        if [ -f /irods_python-re_installer.py ]; then
-            ./irods_python-re_installer.py
-        fi
+        # not sure if we need this
+        #if [ -f /irods_python-re_installer.py ]; then
+        #    ./irods_python-re_installer.py
+        #fi
 
         touch /etc/irods/.provisioned
     fi
