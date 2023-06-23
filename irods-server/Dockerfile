@@ -15,6 +15,7 @@ RUN apt update
 RUN apt upgrade -y
 RUN apt install -y irods-server irods-database-plugin-postgres
 RUN pip3 install distro psutil pyodbc
+COPY docker-entrypoint.sh /docker-entrypoint.sh
 COPY catalog_service_provider.json /tmp/catalog_service_provider.json
 
 ## data volumes
