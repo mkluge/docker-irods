@@ -35,26 +35,26 @@ if [ "$1" == "irods" ]; then
         touch /etc/irods/.provisioned
     fi
 
-    chown -R irods:irods /var/lib/irods
-    chown -R irods:irods /etc/irods
+    #chown -R irods:irods /var/lib/irods
+    #chown -R irods:irods /etc/irods
 
-    /etc/init.d/irods restart
+    #/etc/init.d/irods restart
 
     # Wait for iCAT port to become available
-    while ! nc -w 1 $(hostname) 1247 &> /dev/null; do
-        echo "waiting for icat server ..."
-        sleep 5
-    done
-    sleep 5
+    #while ! nc -w 1 $(hostname) 1247 &> /dev/null; do
+    #    echo "waiting for icat server ..."
+    #    sleep 5
+    #done
+    #sleep 5
 
-    su - irods -c "/irods_login.sh ${IRODS_ADMIN_PASS}"
+    #su - irods -c "/irods_login.sh ${IRODS_ADMIN_PASS}"
 
     # create resources
-    su - irods -c "IRODS_RESOURCE_OL=${IRODS_RESOURCE_OL} IRODS_RESOURCE_NL=${IRODS_RESOURCE_NL} /mkresc.sh"
+    #su - irods -c "IRODS_RESOURCE_OL=${IRODS_RESOURCE_OL} IRODS_RESOURCE_NL=${IRODS_RESOURCE_NL} /mkresc.sh"
 
-    echo "kickoff ${IRODS_RESOURCE_OL}" | nc ${IRODS_RESOURCE_OL} 4321
-    echo "kickoff ${IRODS_RESOURCE_NL}" | nc ${IRODS_RESOURCE_NL} 4321
-    echo "kickoff ${IRODS_WEBDAV_HOST}" | nc ${IRODS_WEBDAV_HOST} 4321
+    #echo "kickoff ${IRODS_RESOURCE_OL}" | nc ${IRODS_RESOURCE_OL} 4321
+    #echo "kickoff ${IRODS_RESOURCE_NL}" | nc ${IRODS_RESOURCE_NL} 4321
+    #echo "kickoff ${IRODS_WEBDAV_HOST}" | nc ${IRODS_WEBDAV_HOST} 4321
 
     echo "iCAT ${HOSTNAME} ready!"
 
