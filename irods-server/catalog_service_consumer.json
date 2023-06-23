@@ -57,7 +57,7 @@
             "transfer_chunk_size_for_parallel_transfer_in_megabytes": 40
         },
         "catalog_provider_hosts": [
-            "irods-provider"
+            "irods-server"
         ],
         "catalog_service_role": "consumer",
         "client_api_allowlist_policy": "enforce",
