@@ -31,7 +31,10 @@ services:
       - IRODS_ZONE_NAME=demo
       - IRODS_WEBDAV_HOST=irods-webdav
       - IRODS_RESOURCE_OL=irods-resc-ol
-      - IRODS_RESOURCE_NL=irods-resc-nl=value
+      - IRODS_RESOURCE_NL=irods-resc-nl
+      - IRODS_CONTROLPLANE_PORT=1248
+      - IRODS_DATA_PORT_RANGE_BEG=20000
+      - IRODS_DATA_PORT_RANGE_END=20199
     depends_on:
       - icat-db
     links:
