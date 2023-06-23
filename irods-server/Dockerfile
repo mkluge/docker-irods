@@ -4,7 +4,7 @@ LABEL MAINTAINER = Michael Kluge <michael.kluge@tu-dresden.de>
 
 RUN apt update
 RUN apt upgrade -y
-RUN apt install -y sudo lsb-release python3-pip systemctl bind9-host
+RUN apt install -y sudo lsb-release python3-pip systemctl bind9-host netcat netcat-openbsd
 # i think this is wrong ... DNS will not work yet
 #RUN host icat-db
 RUN pip3 install --upgrade pip
