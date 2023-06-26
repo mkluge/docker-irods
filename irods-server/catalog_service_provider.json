@@ -28,7 +28,7 @@
         "irods_server_control_plane_key": "8fa777bed0d4e14c89c1eb337c3bd2e8",
         "irods_server_control_plane_port": 1248,
         "irods_transfer_buffer_size_for_parallel_transfer_in_megabytes": 4,
-        "irods_user_name": "irods-user",
+        "irods_user_name": "irods-service",
         "irods_zone_name": "tempZone",
         "schema_name": "service_account_environment",
         "schema_version": "v4"
